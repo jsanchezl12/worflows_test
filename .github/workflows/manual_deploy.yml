@@ -11,25 +11,19 @@ on:
         - pr
         - st
         - qa
-      text_input:
-        description: 'Introduce un texto'
-        required: false
-      checkbox_input:
-        description: 'Marca esta casilla'
-        required: false
-        default: false
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
       message:
         description: Who to greet
+        type: string
         required: true
-      use-emoji:
+      deploy-bv:
         type: boolean
-        description: Include 🎉🤣 emojis
+        description: Deploy Banca Virtual 🖥️
+      deploy-bm:
+        type: boolean
+        description: Deploy Banca Movil 📱
+      deploy-of:
+        type: boolean
+        description: Deploy Oficina 🏦
       environment:
         description: Who to greet
         type: environment
