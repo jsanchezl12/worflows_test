@@ -17,13 +17,13 @@ on:
         required: true
       deploy-bv:
         type: boolean
-        description: Deploy Banca Virtual 🖥️
+        description: 🖥️ Deploy Banca Virtual 
       deploy-bm:
         type: boolean
-        description: Deploy Banca Movil 📱
+        description: 📱 Deploy Banca Movil 
       deploy-of:
         type: boolean
-        description: Deploy Oficina 🏦
+        description: 🏦 Deploy Oficina 
       environment:
         description: Who to greet
         type: environment
