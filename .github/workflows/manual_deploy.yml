@@ -18,6 +18,21 @@ on:
         description: 'Marca esta casilla'
         required: false
         default: false
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        description: Who to greet
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        description: Who to greet
+        type: environment
 
 jobs:
   build:
