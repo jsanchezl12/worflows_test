@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       dropdown_input:
-        description: 'Selecciona una opción'
+        description: "Please, enter the environment"
         required: true
-        default: 'Opción 1'
+        type: choice
         options: 
-          - 'Opción 1'
-          - 'Opción 2'
-          - 'Opción 3'
+        - pr
+        - st
+        - qa
       text_input:
         description: 'Introduce un texto'
         required: false
