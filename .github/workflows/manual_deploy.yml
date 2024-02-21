@@ -1,0 +1,41 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropdown_input:
+        description: 'Selecciona una opción'
+        required: true
+        default: 'Opción 1'
+        options: 
+          - 'Opción 1'
+          - 'Opción 2'
+          - 'Opción 3'
+      text_input:
+        description: 'Introduce un texto'
+        required: false
+      checkbox_input:
+        description: 'Marca esta casilla'
+        required: false
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v2
+      
+      - name: Procesar inputs
+        run: |
+          echo "Opción seleccionada: ${{ github.event.inputs.dropdown_input }}"
+          if [ "${{ github.event.inputs.text_input }}" != "" ]; then
+            echo "Texto ingresado: ${{ github.event.inputs.text_input }}"
+          fi
+          if [ "${{ github.event.inputs.checkbox_input }}" == "true" ]; then
+            echo "Checkbox marcado"
+          else
+            echo "Checkbox no marcado"
+          fi
+          
+      # Aquí puedes agregar más pasos según lo que desees hacer en tu flujo de trabajo.
